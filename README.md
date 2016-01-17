@@ -1,4 +1,4 @@
-# vyos shell api script
+# vyos shell api scripts
 
 - vyos上でコンフィグ修正とかするためのスクリプト
 
@@ -10,5 +10,6 @@
 
 - How to use
     - リモートサーバでアドレス一覧を作成して、ssh経由で設定したり。
+
      cat list.txt | ssh -i ~/.ssh/id_rsa vyos@vyos 'sh set-firewall-IPaddrlist.sh'
 
