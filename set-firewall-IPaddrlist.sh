@@ -28,9 +28,14 @@ ${SHELL_API} setupSession
 $DELETE $NODE
 echo "[`date +'%Y/%m/%d %H:%M:%S'`] Deleted existing JP node"
 
+echo "[`date +'%Y/%m/%d %H:%M:%S'`] Adding JP node"
+LINE=0
 while read x; do
     $SET $NODE $LEAF $x
+    LINE=$((LINE+1))
+    [ $(($LINE % 100)) == 0 ] && echo "[`date +'%Y/%m/%d %H:%M:%S'`] $LINE lines were read"
 done
+echo "[`date +'%Y/%m/%d %H:%M:%S'`] $LINE lines were read"
 
 # config commit/save
 $COMMIT
