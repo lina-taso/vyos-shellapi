@@ -16,9 +16,11 @@ vyos上でコンフィグ修正とかするためのスクリプトとその関�
 ### How to use
 
 - リモートサーバでアドレス一覧を作成して、ssh経由で設定したり。
+
     cat list.txt | ssh -i ~/.ssh/id_rsa vyos@vyos 'sh set-firewall-IPaddrlist.sh'
 
 - ローカルのテキストファイル読み込んで設定したり。
+
     sh set-firewall-IPaddrlist.sh < ipaddr.txt
 
 
@@ -34,11 +36,13 @@ APNICのIPアドレスアサインリストを取得して、IPアドレス（�
 ### How to use
 
 - 実行するだけ。
+
     sh get-JP-IPaddrlist.sh
 
 ### Appendix
 
 - VyOS上のtask-schedularに突っ込めば自動でJPのリスト更新
+
     task JP-update {
         crontab-spec "0 3 1 * *"
         executable {
