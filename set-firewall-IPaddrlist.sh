@@ -26,8 +26,7 @@ ${SHELL_API} setupSession
 
 # config set
 $DELETE $NODE
-$COMMIT
-echo "[`date +'%Y/%m/%d %H:%M:%S'`] Deleted existing node"
+echo "[`date +'%Y/%m/%d %H:%M:%S'`] Deleted existing JP node"
 
 while read x; do
     $SET $NODE $LEAF $x
@@ -35,5 +34,6 @@ done
 
 # config commit/save
 $COMMIT
+echo "[`date +'%Y/%m/%d %H:%M:%S'`] Added JP node and changes are commited"
 $SAVE
-echo "[`date +'%Y/%m/%d %H:%M:%S'`] Script done"
+echo "[`date +'%Y/%m/%d %H:%M:%S'`] Saved"
