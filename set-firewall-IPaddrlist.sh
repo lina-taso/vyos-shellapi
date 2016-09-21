@@ -27,7 +27,7 @@ ${SHELL_API} setupSession
 # config set
 $DELETE $NODE
 $COMMIT
-echo ** Deleted existing node
+echo "[`date +'%Y/%m/%d %H:%M:%S'`] Deleted existing node"
 
 while read x; do
     $SET $NODE $LEAF $x
@@ -36,4 +36,4 @@ done
 # config commit/save
 $COMMIT
 $SAVE
-echo ** Script done
+echo "[`date +'%Y/%m/%d %H:%M:%S'`] Script done"
